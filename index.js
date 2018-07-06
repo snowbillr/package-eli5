@@ -55,7 +55,7 @@ function printDescriptions(dependencyDescriptions) {
 
   const output = Object.keys(dependencyDescriptions).map(dependency => {
     const description = dependencyDescriptions[dependency];
-    return `${colors.green(dependency)}: ${colors.white(description)}`;
+    return `${colors.green(dependency)}: ${description}`;
   }).join('\n');
 
   console.log(banner);
