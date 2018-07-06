@@ -7,10 +7,7 @@
     "package.json",
     "dependencies"
   ],
-  "main": "index.js",
-  "bin": {
-    "package-eli5": "index.js"
-  },
+  "bin": "index.js",
   "repository": {
     "url": "https://github.com/snowbillr/package-eli5",
     "type": "git"

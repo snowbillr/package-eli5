@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const jsonfile = require('jsonfile');
 const request = require('request-promise-native');
 const colors = require('colors/safe');
