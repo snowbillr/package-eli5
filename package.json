@@ -1,8 +1,12 @@
 {
   "name": "package-eli5",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Show the description for each dependency in package.json",
-  "keywords": ["explain", "package.json", "dependencies"],
+  "keywords": [
+    "explain",
+    "package.json",
+    "dependencies"
+  ],
   "main": "index.js",
   "bin": {
     "package-eli5": "index.js"
