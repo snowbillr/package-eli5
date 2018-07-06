@@ -17,5 +17,5 @@ If this parameter is not included, then it is assumed there is a `package.json` 
 
 ## Demo
 <p align="center">
-  <img src="./example.svg" />
+  <img src="./demo.svg" />
 </p>
