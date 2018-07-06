@@ -1,7 +1,17 @@
 {
   "name": "package-eli5",
   "version": "1.0.0",
+  "keywords": ["explain", "package.json", "dependencies"],
   "main": "index.js",
+  "bin": {
+    "package-eli5": "index.js"
+  },
+  "repository": {
+    "url": "https://github.com/snowbillr/package-eli5",
+    "type": "git"
+  },
+  "bugs": "https://github.com/snowbillr/package-eli5/issues",
+  "author": "Bill Reed",
   "license": "MIT",
   "dependencies": {
     "colors": "^1.3.0",
