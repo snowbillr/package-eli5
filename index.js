@@ -1,5 +1,6 @@
 const jsonfile = require('jsonfile');
 const request = require('request-promise-native');
+const colors = require('colors/safe');
 
 jsonfile.readFile(resolvePackageJsonPath(), (err, obj) => {
   const dependencies = extractDependencies(obj);
@@ -7,7 +8,7 @@ jsonfile.readFile(resolvePackageJsonPath(), (err, obj) => {
   Promise.all(fetchDescriptionsForDependencies(dependencies)).then(descriptionList => {
     const dependencyDescriptions = zipToObject(dependencies, descriptionList);
 
-    console.log(dependencyDescriptions);
+    printDescriptions(dependencyDescriptions);
   });
 });
 
@@ -44,4 +45,16 @@ function zipToObject(array1, array2) {
     obj[value] = array2[index];
     return obj;
   }, {});
+}
+
+function printDescriptions(dependencyDescriptions) {
+  const banner = colors.rainbow('Package ELI5');
+
+  const output = Object.keys(dependencyDescriptions).map(dependency => {
+    const description = dependencyDescriptions[dependency];
+    return `${colors.green(dependency)}: ${colors.white(description)}`;
+  }).join('\n');
+
+  console.log(banner);
+  console.log(output);
 }
