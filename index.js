@@ -1,6 +1,7 @@
 const jsonfile = require('jsonfile');
 const request = require('request-promise-native');
 const colors = require('colors/safe');
+const path = require('path');
 
 jsonfile.readFile(resolvePackageJsonPath(), (err, obj) => {
   const dependencies = extractDependencies(obj);
@@ -16,6 +17,8 @@ function resolvePackageJsonPath() {
   const passedInPath = process.argv[2];
   if (passedInPath == null) {
     return './package.json';
+  } else if (!/package\.json$/.test(passedInPath)) {
+    return path.join(passedInPath, 'package.json');
   } else {
     return passedInPath;
   }
